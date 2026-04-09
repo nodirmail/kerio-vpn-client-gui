@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kerio Control VPN Client</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header-section">
+      <div class="header-titles">
+        <h2>KerioControl VPN Client</h2>
+        <div class="status-wrap">
+          <div class="status-indicator disconnected" id="status-dot"></div>
+          <span class="status-text" id="status-text">Disconnected</span>
+        </div>
+      </div>
+      <div class="header-logo">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e3242b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <hr class="separator" />
+
+    <form id="vpn-form">
+      <div class="input-group">
+        <label for="connection">Connection:</label>
+        <div class="input-with-btn">
+          <input type="text" id="connection" list="profile_names" placeholder="Name of connection..." required />
+          <datalist id="profile_names"></datalist>
+          <button type="button" id="btn-delete-profile" class="btn-icon" title="Delete selected connection">✕</button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="server">Server:</label>
+        <input type="text" id="server" required />
+      </div>
+
+      <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" />
+      </div>
+
+      <div class="checkbox-group mt-2">
+        <input type="checkbox" id="save_password" />
+        <label for="save_password">Save password</label>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="persistent" />
+        <label for="persistent">Persistent connection</label>
+      </div>
+
+      <hr class="separator" />
+
+      <div class="action-section">
+        <button type="submit" id="connect-btn" class="btn-primary">Connect</button>
+        <button type="button" id="disconnect-btn" class="btn-secondary" disabled>Disconnect</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

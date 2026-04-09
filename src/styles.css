@@ -1,0 +1,159 @@
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  padding: 15px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header-titles h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.status-wrap {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: inset 0px -2px 4px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.status-indicator.disconnected { background: radial-gradient(circle at 4px 4px, #ff4d4d, #b30000); }
+.status-indicator.connected { background: radial-gradient(circle at 4px 4px, #4dff4d, #00b300); }
+.status-indicator.connecting { background: radial-gradient(circle at 4px 4px, #ffff4d, #b3b300); }
+
+.status-text {
+  font-size: 14px;
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid rgba(127, 127, 127, 0.4);
+  margin: 15px 0;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  width: 85px;
+  font-size: 13px;
+  text-align: right;
+  margin-right: 12px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+  flex-grow: 1;
+  padding: 4px 6px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  font-size: 13px;
+  height: 24px;
+}
+
+.input-with-btn {
+  display: flex;
+  flex-grow: 1;
+  gap: 6px;
+}
+
+.input-with-btn input {
+  flex-grow: 1;
+}
+
+.btn-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  background: rgba(127, 127, 127, 0.1);
+  cursor: pointer;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  padding-left: 97px; /* Align with inputs */
+  margin-bottom: 6px;
+}
+
+.checkbox-group.mt-2 {
+  margin-top: 12px;
+}
+
+.checkbox-group input {
+  margin-right: 6px;
+  margin-top: 0;
+}
+
+.checkbox-group label {
+  font-size: 13px;
+}
+
+.action-section {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 4px 16px;
+  font-size: 13px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  background: rgba(127, 127, 127, 0.1);
+  cursor: pointer;
+  min-width: 90px;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Optional: small UAC shield mimic purely via css / emoji for primary btn */
+.btn-primary::before {
+  content: "🛡️";
+  font-size: 12px;
+}
+
+.btn-primary:disabled, .btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
