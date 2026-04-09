@@ -1,11 +1,13 @@
-# Kerio Control VPN Client GUI (Ubuntu)
+# Kerio Control VPN Client GUI (Unofficial)
 
 [![Tauri](https://img.shields.io/badge/built%20with-Tauri-blue.svg)](https://tauri.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+> **⚠️ Disclaimer:** This is an unofficial, open-source community GUI wrapper for the official Kerio Control VPN Client. This project is not affiliated with, endorsed, or sponsored by GFI Software or Kerio. All trademarks, logos and brand names are the property of their respective owners.
+
 Современный графический интерфейс для Kerio Control VPN Client на Ubuntu 24.04+, вдохновленный классическим дизайном Kerio и современными стандартами UX.
 
-![App Screenshot](https://raw.githubusercontent.com/nodir/kerio-vpn-client/main/src-tauri/icons/128x128.png)
+![App Screenshot](https://raw.githubusercontent.com/nodirmail/kerio-vpn-client-gui/main/src-tauri/icons/128x128.png)
 
 ## Основные особенности
 

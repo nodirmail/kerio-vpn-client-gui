@@ -5,6 +5,7 @@ use std::sync::Mutex;
 use tauri::{Manager, AppHandle, State, Wry};
 use tauri::tray::{TrayIconBuilder, MouseButton, MouseButtonState, TrayIcon};
 use tauri::menu::{Menu, MenuItem, PredefinedMenuItem, CheckMenuItemBuilder};
+use tauri_plugin_autostart::ManagerExt;
 
 #[derive(Serialize, Deserialize, Debug, Default, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -313,6 +314,10 @@ fn get_status(state: State<'_, AppState>) -> Result<VpnStatus, String> {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_autostart::init(
+            tauri_plugin_autostart::MacosLauncher::LaunchAgent,
+            Some(vec![]),
+        ))
         .plugin(tauri_plugin_opener::init())
         .on_window_event(|window, event| {
             if let tauri::WindowEvent::CloseRequested { api, .. } = event {
@@ -327,6 +332,9 @@ pub fn run() {
             if let Some(active_id) = get_active_profile_from_system(&profiles) {
                 init_active_id = Some(active_id);
             }
+
+            // Enable autostart automatically
+            let _ = app.handle().autolaunch().enable();
 
             app.manage(AppState {
                 profiles: Mutex::new(profiles.clone()),
