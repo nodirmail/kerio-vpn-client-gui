@@ -23,7 +23,7 @@
 
 ### 2. Клонирование и запуск (для разработчиков)
 ```bash
-git clone https://github.com/YOUR_USERNAME/kerio-vpn-client.git
+git clone https://github.com/nodirmail/kerio-vpn-client.git
 cd kerio-vpn-client
 npm install
 npm run tauri dev
