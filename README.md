@@ -31,7 +31,14 @@ npm install
 npm run tauri dev
 ```
 
-### 3. Оптимизация авторизации (рекомендуется)
+### 3. Сборка пакета (Release)
+Чтобы создать установочный `.deb` пакет или AppImage:
+```bash
+npm run tauri build
+```
+Готовые файлы появятся в `src-tauri/target/release/bundle/`.
+
+### 4. Оптимизация авторизации (рекомендуется)
 Чтобы приложение не запрашивало пароль каждый раз при подключении:
 ```bash
 bash installer/setup-polkit.sh
